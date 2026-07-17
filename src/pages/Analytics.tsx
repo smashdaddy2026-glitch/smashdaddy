@@ -10,8 +10,8 @@ type Period = 'day' | 'week' | 'month' | 'year';
 
 interface AnalyticsProps {
   onLogout: () => void;
-  onNavigate: (tab: 'menu' | 'inventory' | 'analytics') => void;
-  activeTab: 'menu' | 'inventory' | 'analytics';
+  onNavigate: (tab: 'menu' | 'inventory' | 'analytics' | 'staff') => void;
+  activeTab: 'menu' | 'inventory' | 'analytics' | 'staff';
 }
 
 interface ItemSold {
@@ -136,6 +136,7 @@ export default function Analytics({ onLogout, onNavigate, activeTab }: Analytics
             [
               { key: 'menu', label: 'Menu Management' },
               { key: 'inventory', label: 'Inventory' },
+              { key: 'staff', label: 'Staff' },
               { key: 'analytics', label: 'Analytics' },
             ] as const
           ).map((tab) => (

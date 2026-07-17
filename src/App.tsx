@@ -3,12 +3,13 @@ import Landing from './pages/Landing';
 import AdminLogin from './pages/AdminLogin';
 import MenuManagement from './pages/MenuManagement';
 import InventoryManagement from './pages/InventoryManagement';
+import StaffManagement from './pages/StaffManagement';
 import Analytics from './pages/Analytics';
 import OrderModule from './pages/OrderModule';
 import { isAdminLoggedIn, logoutAdmin } from './lib/auth';
 
 type View = 'landing' | 'admin-login' | 'admin' | 'order';
-type AdminTab = 'menu' | 'inventory' | 'analytics';
+type AdminTab = 'menu' | 'inventory' | 'analytics' | 'staff';
 
 export default function App() {
   const [view, setView] = useState<View>('landing');
@@ -60,6 +61,11 @@ export default function App() {
           onNavigate={setAdminTab}
           activeTab={adminTab}
         />
+      );
+    }
+    if (adminTab === 'staff') {
+      return (
+        <StaffManagement onLogout={handleLogout} onNavigate={setAdminTab} activeTab={adminTab} />
       );
     }
     return <Analytics onLogout={handleLogout} onNavigate={setAdminTab} activeTab={adminTab} />;

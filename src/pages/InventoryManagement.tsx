@@ -4,7 +4,7 @@ import type { InventoryItem } from '../types';
 import { Plus, Pencil, Trash2, Search, Minus, AlertTriangle } from 'lucide-react';
 import Modal from '../components/Modal';
 
-type AdminTab = 'menu' | 'inventory' | 'analytics';
+type AdminTab = 'menu' | 'inventory' | 'analytics' | 'staff';
 
 interface InventoryManagementProps {
   onLogout: () => void;
@@ -176,6 +176,7 @@ export default function InventoryManagement({
             [
               { key: 'menu', label: 'Menu Management' },
               { key: 'inventory', label: 'Inventory' },
+              { key: 'staff', label: 'Staff' },
               { key: 'analytics', label: 'Analytics' },
             ] as const
           ).map((tab) => (

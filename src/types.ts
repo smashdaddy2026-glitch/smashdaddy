@@ -30,6 +30,21 @@ export interface CartLine {
   quantity: number;
 }
 
+export interface Staff {
+  id: string;
+  name: string;
+  cnic: string;
+  phone: string;
+  position: string;
+  salary: number;
+  joining_date: string;
+  address: string | null;
+  status: 'active' | 'inactive';
+  notes: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface InventoryItem {
   id: string;
   name: string;

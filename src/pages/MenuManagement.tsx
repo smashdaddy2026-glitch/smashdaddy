@@ -5,7 +5,7 @@ import { Plus, Pencil, Trash2, Search } from 'lucide-react';
 import Modal from '../components/Modal';
 import { formatPKR } from '../lib/format';
 
-type AdminTab = 'menu' | 'inventory' | 'analytics';
+type AdminTab = 'menu' | 'inventory' | 'analytics' | 'staff';
 
 interface MenuManagementProps {
   onLogout: () => void;
@@ -160,6 +160,7 @@ export default function MenuManagement({ onLogout, onNavigate, activeTab }: Menu
             [
               { key: 'menu', label: 'Menu Management' },
               { key: 'inventory', label: 'Inventory' },
+              { key: 'staff', label: 'Staff' },
               { key: 'analytics', label: 'Analytics' },
             ] as const
           ).map((tab) => (
